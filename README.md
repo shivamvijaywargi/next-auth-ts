@@ -1,6 +1,6 @@
-# Welcome to RestauGenie
+# Welcome to Next-Auth-TS
 
-This is the repository where the frontend of RestauGenie resides.
+This is the repository for an authentication system built using NextJS 13 App Directory.
 
 ### Tech stack
 
