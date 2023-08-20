@@ -5,6 +5,9 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { UserRegisterForm } from "@/components/user-register-form";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoginFormValues, loginFormSchema } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -12,6 +15,15 @@ export const metadata: Metadata = {
 };
 
 export default function Login() {
+  const form = useForm<LoginFormValues>({
+    // @ts-ignore
+    resolver: zodResolver(loginFormSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
   return (
     <>
       <div className="md:hidden">
