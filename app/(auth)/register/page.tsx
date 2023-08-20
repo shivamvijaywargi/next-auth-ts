@@ -4,11 +4,11 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { UserAuthForm } from "@/components/user-auth-form";
+import { UserRegisterForm } from "@/components/user-register-form";
 
 export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
+  title: "Register",
+  description: "Register a new account.",
 };
 
 export default function Register() {
@@ -35,7 +35,7 @@ export default function Register() {
           href="/examples/authentication"
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            "absolute right-4 top-4 md:right-8 md:top-8"
+            "absolute right-4 top-4 md:right-8 md:top-8",
           )}
         >
           Login
@@ -78,7 +78,7 @@ export default function Register() {
                 Enter your email below to create your account
               </p>
             </div>
-            <UserAuthForm />
+            <UserRegisterForm />
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link
