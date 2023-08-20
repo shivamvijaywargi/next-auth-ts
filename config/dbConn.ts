@@ -11,6 +11,10 @@ export async function connectToDB() {
     connection.on("connected", () => {
       console.log(`Connected to MongoDB: ${connection.host}`);
     });
+
+    connection.on("error", (err) => {
+      console.log("MongoDB error: " + err);
+    });
   } catch (error) {
     console.log("Something went wrong");
     console.log(error);
