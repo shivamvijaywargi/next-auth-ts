@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export async function connectToDB() {
   try {
     mongoose.connect(
-      process.env.MONGO_URI || "mongodb://localhost:27017/next-auth-ts",
+      process.env.MONGO_URI || "mongodb://localhost:27017/next-auth-ts"
     );
 
     const connection = mongoose.connection;

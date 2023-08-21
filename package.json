@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
+    "turbo": "next dev --turbo",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },

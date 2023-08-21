@@ -4,10 +4,7 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { UserRegisterForm } from "@/components/user-register-form";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginFormValues, loginFormSchema } from "@/lib/types";
+import { UserLoginForm } from "@/components/user-login-form";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -15,15 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function Login() {
-  const form = useForm<LoginFormValues>({
-    // @ts-ignore
-    resolver: zodResolver(loginFormSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
-
   return (
     <>
       <div className="md:hidden">
@@ -47,7 +35,7 @@ export default function Login() {
           href="/register"
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            "absolute right-4 top-4 md:right-8 md:top-8",
+            "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
           Register
@@ -83,14 +71,12 @@ export default function Login() {
         <div className="lg:p-8">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
             <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
-                Create an account
-              </h1>
+              <h1 className="text-2xl font-semibold tracking-tight">Sign In</h1>
               <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
+                Sign in to your account
               </p>
             </div>
-            <UserRegisterForm />
+            <UserLoginForm />
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link

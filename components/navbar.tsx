@@ -1,11 +1,12 @@
-import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
+import Link from "next/link";
+
 import { ModeToggle } from "./toggle-theme";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="p-4 container mx-auto flex justify-between items-center">
+    <nav className="container mx-auto flex items-center justify-between p-4">
       <Link href={"/"}>NextAuth</Link>
       <div className="flex gap-x-4">
         <Link href={"/login"}>

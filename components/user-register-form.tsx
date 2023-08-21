@@ -1,16 +1,11 @@
 "use client";
 
-import * as React from "react";
-
-import { z } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
+import { registerFormSchema, RegisterFormValues } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Icons } from "@/components/icons";
 import {
   Form,
   FormControl,
@@ -19,7 +14,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { RegisterFormValues, registerFormSchema } from "@/lib/types";
+import { Input } from "@/components/ui/input";
+import { Icons } from "@/components/icons";
 
 interface UserRegisterFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 

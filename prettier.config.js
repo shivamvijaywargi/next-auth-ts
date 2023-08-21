@@ -1,4 +1,5 @@
-module.export = {
+/** @type {import('prettier').Config} */
+module.exports = {
   tabWidth: 2,
   trailingComma: "es5",
   endOfLine: "lf",
@@ -21,14 +22,14 @@ module.export = {
     "",
     "^[./]",
   ],
+  plugins: [
+    require("@ianvs/prettier-plugin-sort-imports"),
+    require("prettier-plugin-tailwindcss"),
+  ],
   importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   importOrderBuiltinModulesToTop: true,
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
-  plugins: [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss",
-  ],
 };
