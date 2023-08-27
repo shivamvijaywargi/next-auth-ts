@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { USER_ROLES } from "@/config/USER_ROLES";
+
 export const registerFormSchema = z
   .object({
     firstName: z
@@ -37,3 +39,13 @@ export const loginFormSchema = z.object({
 });
 
 export type LoginFormValues = z.infer<typeof loginFormSchema>;
+
+export interface IUserSchema {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  role: USER_ROLES.ADMIN | USER_ROLES.USER;
+  isVerified: boolean;
+  isActive: boolean;
+}
